@@ -8,8 +8,7 @@
   </a>
 </mat-toolbar>
 <mat-sidenav-container class="sidenav-container" hasBackdrop="true">
-  <mat-sidenav #sidenav="matSidenav" mode="push" style="min-width:15rem; background-color: rgb(80 40 122 / 42%) !important;
-">
+  <mat-sidenav #sidenav="matSidenav" mode="push" style="min-width:15rem;">
     <app-sidebar [sidenavOpen]="sidenav.opened" (sidenavToggle)="sidenav.toggle()"></app-sidebar>
   </mat-sidenav>
   <mat-sidenav-content  >
