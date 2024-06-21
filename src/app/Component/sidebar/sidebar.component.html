@@ -1,10 +1,9 @@
-<div class="sidebar-class">
-  <ng-container *ngFor="let voce of this.menu ">
-    <button mat-button class="menu-button" (click)="navigaPagina(voce)">
+<div class="menu-container">
+    <button mat-button class="menu-item-button" *ngFor="let voce of this.menu " (click)="navigaPagina(voce)">
       <mat-icon color="primary">{{ voce.nomeIcona }}</mat-icon>
-      <span>{{ voce.title }}</span>
+      <span class="span-custom">{{voce.title}}</span>
     </button>
-  </ng-container>
 </div>
+
 
 

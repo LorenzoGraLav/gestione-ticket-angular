@@ -1,18 +1,21 @@
-<mat-toolbar class="mat-toolbar-custom">
+<mat-toolbar class="mat-toolbar-custom" >
   <button mat-icon-button (click)="sidenav.toggle()">
     <mat-icon class="ham-icon" *ngIf="!sidenav.opened">menu</mat-icon>
     <mat-icon class="ham-icon" *ngIf="sidenav.opened">close</mat-icon>
   </button>
-  <div fxLayout="row" fxLayoutAlign="start center">
-    <img src="./assets/logo/Logo.png" width="52px" alt="logo">
-  </div>
+  <a href="https://www.solvingteam.it/">
+    <img src="https://www.geeklogica.it/wp-content/uploads/2022/02/Group-17.png" alt="Solving Team" height="56">
+  </a>
 </mat-toolbar>
-<mat-sidenav-container class="mat-container-custom" [hasBackdrop]="true" >
-  <mat-sidenav #sidenav mode="push">
+<mat-sidenav-container class="sidenav-container" hasBackdrop="true" >
+  <mat-sidenav #sidenav="matSidenav" mode="push" style="min-width:15rem; background-color: rgb(222 222 222);
+">
     <app-sidebar [sidenavOpen]="sidenav.opened" (sidenavToggle)="sidenav.toggle()"></app-sidebar>
   </mat-sidenav>
   <mat-sidenav-content>
-    <router-outlet></router-outlet>
+    <div class="sidenav-content-custom">
+      <router-outlet></router-outlet>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
 

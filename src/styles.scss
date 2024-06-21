@@ -10,9 +10,30 @@ app-toolbar{
 .mat-toolbar-custom {
   justify-content: space-between;
   height:4rem !important;
-  background-color: #2db264 !important;
+  background-color: rgb(222 222 222)!important;
+  box-shadow: 0 4px 6px rgb(172 170 170 / 74%);
 }
 
 .mat-container-custom{
   height: calc(100vh - 4rem);
+}
+.main-page-card{
+  margin: 1rem;
+  border-radius: 12px;
+  min-height: 86vh;
+}
+
+h2{
+  color: white;
+  font-size: 40px;
+}
+
+.full-page{
+  display: block;
+  height: 100%;
+}
+
+.sidenav{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
