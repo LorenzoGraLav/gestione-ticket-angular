@@ -1,0 +1,18 @@
+body{
+  margin: 0;
+}
+
+app-toolbar{
+  display:block;
+  height: 100px;
+}
+
+.mat-toolbar-custom {
+  justify-content: space-between;
+  height:4rem !important;
+  background-color: #2db264 !important;
+}
+
+.mat-container-custom{
+  height: calc(100vh - 4rem);
+}
