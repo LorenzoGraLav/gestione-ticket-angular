@@ -1,5 +1,5 @@
 .sidenav-container{
-  background: #f3f3f3;
+  background: #fff !important;
   height: calc(100vh - 4rem);
 }
 
@@ -10,10 +10,11 @@
   //border: solid 1px #000000;
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
+  background-color: #fff !important;
+  box-shadow: 0 5px 5px -3px #0003, 0 8px 10px 1px #00000024, 0 3px 14px 2px #0000001f;
 }
 
 .sidenav-content-custom{
-
   margin: 1rem;
   min-height: 90%;
 }
@@ -23,5 +24,5 @@
 
 .mat-drawer{
   min-width: 15rem;
-  background-color: rgb(38 84 222 / 30%) !important;
 }
+

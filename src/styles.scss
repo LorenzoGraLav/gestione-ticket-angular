@@ -1,38 +1,59 @@
-body{
+body {
   margin: 0;
 }
 
-app-toolbar{
-  display:block;
+app-toolbar {
+  display: block;
   height: 100px;
 }
 
 .mat-toolbar-custom {
   justify-content: space-between;
-  height:4rem !important;
-  background-color: rgb(38 84 222 / 70%) !important;
+  height: 4rem !important;
+  background-color: #d2c4c4 !important;;
 }
 
-.mat-container-custom{
+.mat-container-custom {
   height: calc(100vh - 4rem);
 }
-.main-page-card{
+
+.main-page-card {
   margin: 1rem;
   border-radius: 12px;
   min-height: 86vh;
 }
 
-h2{
+h2 {
   color: white;
   font-size: 40px;
 }
 
-.full-page{
+.full-page {
   display: block;
   height: 100%;
 }
 
-.sidenav{
+.sidenav {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+//si occupa della transazione e ridimensionamento della router-outlet
+.content-closed, .content-open {
+  transition: width 0.3s cubic-bezier(0.25, -0.15, 0.13, 1.26);
+  overflow: auto;
+  height: calc(100vh - 130px);
+  border-radius: 10px;
+  margin: 16px 16px 16px 32px;
+  box-shadow: 0 5px 5px -3px #0003, 0 8px 10px 1px #00000024, 0 3px 14px 2px #0000001f;
+  background-color: #fff;
+  padding: 16px;
+}
+.content-closed {
+  width: 94%;
+}
+.content-open {
+  width: 78%;
+}
+.custom-icon{
+  color: #d2c4c4 !important;
 }

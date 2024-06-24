@@ -5,7 +5,7 @@ import {SidebarComponent} from "./Component/sidebar/sidebar.component";
 import {MatIcon} from "@angular/material/icon";
 import {MatIconButton} from "@angular/material/button";
 import {MatToolbar} from "@angular/material/toolbar";
-import {NgIf} from "@angular/common";
+import {NgClass, NgIf} from "@angular/common";
 
 @Component({
   imports: [
@@ -17,7 +17,8 @@ import {NgIf} from "@angular/common";
     MatIcon,
     MatIconButton,
     MatToolbar,
-    NgIf
+    NgIf,
+    NgClass
   ],
   selector: 'app-root',
   standalone: true,
@@ -26,4 +27,9 @@ import {NgIf} from "@angular/common";
 })
 export class AppComponent {
   title = 'gestione-ticket-angular';
+  contentWidth = '100%';
+
+  onSidenavToggle(opened: boolean) {
+    this.contentWidth = opened ? 'calc(100% - 15rem)' : '100%';
+  }
 }

@@ -34,4 +34,5 @@ export class SidebarComponent implements OnInit {
       this.sidenavToggle.emit();
     }
   }
+
 }

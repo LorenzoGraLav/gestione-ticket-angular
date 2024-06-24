@@ -1,9 +1,10 @@
 <div class="menu-container">
     <button mat-button class="menu-item-button" *ngFor="let voce of this.menu " (click)="navigaPagina(voce)">
-      <mat-icon color="primary">{{ voce.nomeIcona }}</mat-icon>
+      <mat-icon class="custom-icon">{{ voce.nomeIcona }}</mat-icon>
       <span class="span-custom">{{voce.title}}</span>
     </button>
 </div>
+
 
 
 
