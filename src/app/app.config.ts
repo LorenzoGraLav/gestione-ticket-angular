@@ -18,7 +18,7 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(),
     LayoutService,
     AuthService,
-    AreaService,
+    AreaService, provideAnimationsAsync('noop'),
     // {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
 // provideHttpClient(withInterceptors([AuthInterceptor]))
   ]

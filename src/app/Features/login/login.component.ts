@@ -1,26 +1,28 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {AuthService} from "../../Service/auth/auth.service";
-import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {Utente} from "../../Model/Utente";
+import {FormBuilder, FormControl, ReactiveFormsModule, Validators} from "@angular/forms";
 import {Router, RouterLink} from "@angular/router";
-import {MatFormField, MatLabel} from "@angular/material/form-field";
+import {MatError, MatFormField, MatLabel, MatSuffix} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
-import {MatButton} from "@angular/material/button";
+import {MatButton, MatIconButton} from "@angular/material/button";
+import {MatCard} from "@angular/material/card";
+import {MatIcon} from "@angular/material/icon";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ ReactiveFormsModule,
+  imports: [ReactiveFormsModule,
     MatFormField,
     MatLabel,
     MatInput,
     MatButton,
-    RouterLink,],
+    RouterLink, MatCard, MatIcon, MatError, NgIf, MatIconButton, MatSuffix],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  private user !: Utente;
+  showPassword: boolean = false;
   constructor(
     private authService: AuthService,
     private formBuilder: FormBuilder,
@@ -30,23 +32,26 @@ export class LoginComponent {
 
   utenteForm = this.formBuilder.group(
     {
-      Email: new FormControl("", Validators.required),
+      Email: new FormControl("", [Validators.required, Validators.email]),
       Password: new FormControl("", Validators.required)
     }
   )
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
   SubmitLogin(){
-      if (this.utenteForm.valid) {
-        this.authService.Login(this.utenteForm.getRawValue()).subscribe({
-          next: (response) => {
-            console.log(response );
-            if (response.token) {
-              this.router.navigate(['/dashboard']);
-            }
-          },
-          error: (error) => {
-            console.error(error);
+    if (this.utenteForm.valid) {
+      this.authService.Login(this.utenteForm.getRawValue()).subscribe({
+        next: (response) => {
+          console.log(response );
+          if (response.token) {
+            this.router.navigate(['/dashboard']);
           }
-        });
-      }
+        },
+        error: (error) => {
+          console.error(error);
+        }
+      });
     }
+  }
 }
