@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {RouterOutlet} from "@angular/router";
+import {FormBuilder, Validators} from "@angular/forms";
+import {AuthService} from "../../Service/auth/auth.service";
 
 @Component({
   selector: 'app-auth-layout',
@@ -11,5 +13,7 @@ import {RouterOutlet} from "@angular/router";
   styleUrl: './auth-layout.component.scss'
 })
 export class AuthLayoutComponent {
+
+
 
 }

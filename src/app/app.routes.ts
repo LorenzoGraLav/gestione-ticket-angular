@@ -5,6 +5,8 @@ import {AuthLayoutComponent} from "./Layout/auth-layout/auth-layout.component";
 import {inject} from "@angular/core";
 import {AuthService} from "./Service/auth/auth.service";
 import {FeaturesLayoutComponent} from "./Layout/features-layout/features-layout.component";
+import {RegisterComponent} from "./Features/register/register.component";
+import {authGuard} from "./Service/auth/authGuard";
 
 export const routes: Routes = [
   {
@@ -17,11 +19,13 @@ export const routes: Routes = [
     component: AuthLayoutComponent,
     children: [
       {path: 'login', component: LoginComponent},
-      {path: 'register', component: LoginComponent},
+      {path: 'register', component: RegisterComponent},
     ],
   },
   {
     path: 'app',
+    canActivate: [authGuard],
+    canActivateChild: [authGuard],
     component: FeaturesLayoutComponent,
     children: [
       {path: '', redirectTo: 'dashboard', pathMatch: 'full'},

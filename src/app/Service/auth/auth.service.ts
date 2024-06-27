@@ -32,4 +32,10 @@ export class AuthService {
   getToken(tokenName: string): any {
     return localStorage.getItem(tokenName);
   }
+  Register(Utente:any): Observable<any>{
+    return this.http.post<any>(`${this.baseUrl}Auth/Register`, Utente);
+  }
+  isUserLogged() {
+    return localStorage.getItem('accessToken') != null;
+  }
 }
