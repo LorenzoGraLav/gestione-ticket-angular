@@ -14,8 +14,6 @@ import {LayoutService} from "../../Service/layout.service";
   styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent implements OnInit {
-  @Input() sidenavOpen !: boolean;
-  @Output() sidenavToggle: EventEmitter<any> = new EventEmitter();
 
   constructor(
     public layoutService: LayoutService,
@@ -30,9 +28,6 @@ export class SidebarComponent implements OnInit {
   }
   navigaPagina(voce: VoceMenu){
     this.router.navigate([voce.url], {state: {data: { title: voce.title}}});
-    if(this.sidenavOpen){
-      this.sidenavToggle.emit();
-    }
   }
 
 }

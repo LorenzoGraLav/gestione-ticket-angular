@@ -1,0 +1,98 @@
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6 col-xl-5">
+    <div style="display: flex; justify-content: center">
+      <mat-card appearance="outlined" style="padding: 2%; width: 54%; height: 72vh;">
+        <div style="text-align: center">
+          <h5 style="color: #DA0403 !important; font-size: 1.25rem; font-weight: bold">Benvenuto !</h5>
+          <p style="color: #6c757d !important;">Effettua la registrazione per usufruire dei servizi!</p>
+        </div>
+        <div class="p-2 mt-4">
+          <form [formGroup]="userForm" style="display: flex; flex-direction: column; align-items: center;">
+            <!-- Nome  =========================================================================================================-->
+            <mat-form-field appearance="outline" style="width: 100%;">
+              <mat-label>
+                Nome
+              </mat-label>
+              <input matInput type="text" formControlName="Nome" id="Nome" autocomplete="off">
+              <mat-error
+                *ngIf="userForm.get('Nome')?.hasError('required') ">
+                Nome obbligatorio!
+              </mat-error>
+              <mat-error *ngIf="userForm.get('Nome')?.hasError('maxLength')">Supera caratteri massimi!
+              </mat-error>
+              <mat-error *ngIf="userForm.get('Nome')?.hasError('minLength')">Caratteri minimi non soddisfatti!
+              </mat-error>
+            </mat-form-field>
+            <!-- Cognome  =========================================================================================================-->
+            <mat-form-field appearance="outline" style="width: 100%;">
+              <mat-label>
+                Cognome
+              </mat-label>
+              <input matInput type="text" formControlName="Cognome" id="Cognome" autocomplete="off">
+              <mat-error
+                *ngIf="userForm.get('Cognome')?.hasError('required')">
+                Cognome obbligatorio!
+              </mat-error>
+              <mat-error *ngIf="userForm.get('Cognome')?.hasError('maxLength')">Supera caratteri massimi!
+              </mat-error>
+              <mat-error *ngIf="userForm.get('Cognome')?.hasError('minLength')">Caratteri minimi non soddisfatti!
+              </mat-error>
+            </mat-form-field>
+            <!-- EMAIL =========================================================================================================-->
+            <mat-form-field appearance="outline" style="width: 100%;">
+              <mat-label>
+                <mat-icon style="vertical-align: middle; margin-right: 6px;">mail_outline</mat-icon>
+                E-mail
+              </mat-label>
+              <input matInput type="text" formControlName="Email" id="Email" autocomplete="off">
+              <mat-error
+                *ngIf="userForm.get('Email')?.hasError('required')">
+                E-mail obbligatoria!
+              </mat-error>
+              <mat-error *ngIf="userForm.get('Email')?.hasError('email')">E-mail non valida!
+              </mat-error>
+            </mat-form-field>
+            <!-- Password =========================================================================================================-->
+            <mat-form-field appearance="outline" style="width: 100%;">
+              <mat-label>
+          <span style="display: flex; align-items: center;">
+            <mat-icon matSuffix (click)="togglePasswordVisibility()" style="cursor: pointer; vertical-align: middle; margin-right: 6px;">
+              {{ showPassword ? 'visibility_off' : 'visibility' }}
+            </mat-icon>
+            Password
+          </span>
+              </mat-label>
+              <input matInput [type]="showPassword ? 'text' : 'password'" formControlName="Password" id="Password">
+              <mat-error *ngIf="userForm.get('Password')?.invalid ">
+                Password obbligatoria!
+              </mat-error>
+            </mat-form-field>
+
+            <!-- Conferma Password -->
+            <mat-form-field appearance="outline" style="width: 100%;">
+              <mat-label>
+    <span style="display: flex; align-items: center;">
+      <mat-icon matSuffix (click)="toggleConfirmPasswordVisibility()" style="cursor: pointer; vertical-align: middle; margin-right: 6px;">
+        {{ showConfirmPassword ? 'visibility_off' : 'visibility' }}
+      </mat-icon>
+      Conferma Password
+    </span>
+              </mat-label>
+              <input matInput [type]="showConfirmPassword ? 'text' : 'password'" formControlName="ConfirmPassword" id="ConfirmPassword">
+              <mat-error *ngIf="userForm.get('ConfirmPassword')?.hasError('required')">
+                Conferma Password obbligatoria!
+              </mat-error>
+              <mat-error *ngIf="userForm.hasError('passwordMismatch')">
+                Le password non corrispondono!
+              </mat-error>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" (click)="Register()">Registrati</button>
+          </form>
+        </div>
+      </mat-card>
+    </div>
+    <p style="text-align: center; padding-bottom: 1%">Hai un account? <a style="color: #DA0403 !important;cursor: pointer;"
+                                                                (click)="navigaLogin()">Login!</a></p>
+  </div>
+</div>

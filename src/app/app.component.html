@@ -1,20 +1,21 @@
-<mat-toolbar class="mat-toolbar-custom">
-  <button mat-icon-button (click)="sidenav.toggle()">
-    <mat-icon class="ham-icon" *ngIf="!sidenav.opened">menu</mat-icon>
-    <mat-icon class="ham-icon" *ngIf="sidenav.opened">close</mat-icon>
-  </button>
-  <a href="https://www.solvingteam.it/">
-    <img src="https://www.geeklogica.it/wp-content/uploads/2022/02/Group-17.png" alt="Solving Team" height="56">
-  </a>
-</mat-toolbar>
-<mat-sidenav-container class="sidenav-container" hasBackdrop="true">
-  <mat-sidenav #sidenav="matSidenav" mode="push" style="min-width:15rem;" >
-    <app-sidebar  class="containerSidenav" [sidenavOpen]="sidenav.opened" (sidenavToggle)="sidenav.toggle()"></app-sidebar>
-  </mat-sidenav>
-  <mat-sidenav-content>
+<!--<mat-toolbar *ngIf="!isLoginPage()" class="mat-toolbar-custom">-->
+<!--  <button mat-icon-button (click)="sidenav.toggle()">-->
+<!--    <mat-icon class="ham-icon" *ngIf="!sidenav.opened">menu</mat-icon>-->
+<!--    <mat-icon class="ham-icon" *ngIf="sidenav.opened">close</mat-icon>-->
+<!--  </button>-->
+<!--  <a href="https://www.solvingteam.it/">-->
+<!--    <img src="https://www.geeklogica.it/wp-content/uploads/2022/02/Group-17.png" alt="Solving Team" height="56">-->
+<!--  </a>-->
+<!--</mat-toolbar>-->
+<!--<mat-sidenav-container  class="sidenav-container" hasBackdrop="true" >-->
+<!--  <mat-sidenav  #sidenav="matSidenav" mode="push" style="min-width:15rem;" >-->
+<!--    <app-sidebar  *ngIf="!isLoginPage()"  [sidenavOpen]="sidenav.opened" (sidenavToggle)="sidenav.toggle()"></app-sidebar>-->
+<!--  </mat-sidenav>-->
+<!--  <mat-sidenav-content>-->
 
-    <div [ngClass]="{'content-open': sidenav.opened, 'content-closed': !sidenav.opened}">
-      <router-outlet></router-outlet>
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<!--    <div [ngClass]="{'content-open': sidenav.opened, 'content-closed': !sidenav.opened}">-->
+<!--      <router-outlet></router-outlet>-->
+<!--    </div>-->
+<!--  </mat-sidenav-content>-->
+<!--</mat-sidenav-container>-->
+<router-outlet></router-outlet>
