@@ -26,3 +26,59 @@
   min-width: 15rem;
 }
 
+/* footer.component.css */
+.footer-container {
+  background-color: var(--bg-body-tertiary, #f8f9fa); /* Assuming bg-body-tertiary is a custom CSS variable */
+  color: var(--text-muted, #6c757d);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.footer-container .mat-icon-lg {
+  font-size: 25px;
+  color: #eb132c;
+}
+
+.footer-container a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-container a:hover {
+  color: #eb132c;
+}
+
+.footer-container p {
+  margin-bottom: 0.5rem;
+}
+
+.footer-container .socials-icon-container a {
+  color: #eb132c;
+}
+
+.footer-container .mat-divider {
+  margin: 0 10rem;
+}
+
+.footer-container .text-center p {
+  margin: 0;
+}
+
+.footer-container .mat-body-1 {
+  font-size: 0.875rem;
+}
+
+.footer-container .fw-bold {
+  font-weight: bold;
+}
+
+.footer-container .mat-subheading-2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.footer-container hr {
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+}

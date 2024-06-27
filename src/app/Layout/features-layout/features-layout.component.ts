@@ -6,6 +6,8 @@ import {MatToolbar} from "@angular/material/toolbar";
 import {NgClass, NgIf} from "@angular/common";
 import {RouterOutlet} from "@angular/router";
 import {SidebarComponent} from "../../Component/sidebar/sidebar.component";
+import {MatDivider} from "@angular/material/divider";
+import {MatGridList, MatGridTile} from "@angular/material/grid-list";
 
 @Component({
   selector: 'app-features-layout',
@@ -20,7 +22,10 @@ import {SidebarComponent} from "../../Component/sidebar/sidebar.component";
     NgIf,
     RouterOutlet,
     SidebarComponent,
-    NgClass
+    NgClass,
+    MatDivider,
+    MatGridList,
+    MatGridTile
   ],
   templateUrl: './features-layout.component.html',
   styleUrl: './features-layout.component.scss'

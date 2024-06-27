@@ -8,9 +8,9 @@ app-toolbar {
 }
 
 .mat-toolbar-custom {
-  justify-content: space-between;
+  justify-content: flex-end;
   height: 4rem !important;
-  background-color: #d2c4c4 !important;;
+  background-color: #efefefed  !important;;
 }
 
 .mat-container-custom {
@@ -38,7 +38,7 @@ h2 {
   margin-bottom: 1rem;
 }
 //si occupa della transazione e ridimensionamento della router-outlet
-.content-closed, .content-open {
+.content-open {
   transition: width 0.3s cubic-bezier(0.25, -0.15, 0.13, 1.26);
   overflow: auto;
   height: calc(100vh - 130px);
@@ -48,12 +48,7 @@ h2 {
   background-color: #fff;
   padding: 16px;
 }
-.content-closed {
-  width: 94%;
-}
-.content-open {
-  width: 78.5%;
-}
+
 .custom-icon{
   color: #d2c4c4 !important;
 }
