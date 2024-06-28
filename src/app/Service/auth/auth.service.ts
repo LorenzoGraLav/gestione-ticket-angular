@@ -49,4 +49,15 @@ export class AuthService {
      localStorage.removeItem('accessToken');
     this.route.navigate(['/login']);
   }
+  //controllo se il token e valido
+  isTokenExpired(): boolean {
+    const token = this.getToken('accessToken');
+    if (!token) {
+      return true;
+    }
+
+    const expiry = (JSON.parse(atob(token.split('.')[1]))).exp;
+    return (Math.floor((new Date).getTime() / 1000)) >= expiry;
+  }
 }
+
