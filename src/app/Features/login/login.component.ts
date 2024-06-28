@@ -54,7 +54,7 @@ export class LoginComponent {
       });
     }
   }
-  naviaRegistrazione(){
+  navigaRegistrazione(){
     this.router.navigate(['/register']);
   }
 }

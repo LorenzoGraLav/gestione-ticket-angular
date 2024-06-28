@@ -5,7 +5,6 @@ import {routes} from './app.routes';
 import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
 import {LayoutService} from "./Service/layout.service";
 import {HTTP_INTERCEPTORS, provideHttpClient, withInterceptors} from "@angular/common/http";
-// import {mioInterceptroInterceptor} from "./Service/auth/mio-interceptro.interceptor";
 import {AuthService} from "./Service/auth/auth.service";
 import {AreaService} from "./Service/area.service";
 import {loggingInterceptor} from "./Service/auth/login.interceptor";

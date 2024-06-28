@@ -5,6 +5,9 @@ import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from "@angular/mat
 import {MatGridList} from "@angular/material/grid-list";
 import {MatIcon} from "@angular/material/icon";
 import {FlexModule} from "@angular/flex-layout";
+import {Utente} from "../../Model/Utente";
+import {Ruolo} from "../../Model/Ruolo";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-dashboard',
@@ -16,22 +19,36 @@ import {FlexModule} from "@angular/flex-layout";
     MatGridList,
     MatIcon,
     MatCardTitle,
-    FlexModule
+    FlexModule,
+    NgIf
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent implements OnInit{
+  user !:Utente
 
   constructor(
     private auth: AuthService,
-    private area: AreaService
 ) {
   }
 
   ngOnInit(): void {
-    // this.auth.Login()
-    // this.area.getAree().subscribe(resp => console.log(resp)
-    // )
+   this.user = this.auth.extractTokenPayload("accessToken");
+    console.log(this.user)
   }
+checkRuolo():string{
+  if (typeof this.user.Ruolo === 'string') {
+    this.user.Ruolo = this.getRuoloFromString(this.user.Ruolo);
+  }
+     if(this.user.Ruolo == Ruolo.Tecnico){
+       return "Tecnico"
+     }
+return "Utente"
+}
+   getRuoloFromString(ruoloStr: string): Ruolo | undefined {
+    return Ruolo[ruoloStr as keyof typeof Ruolo];
+  }
+
+  protected readonly Ruolo = Ruolo;
 }

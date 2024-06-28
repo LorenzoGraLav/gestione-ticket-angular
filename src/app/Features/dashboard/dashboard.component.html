@@ -1,27 +1,43 @@
 <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
-  <!-- Card per Ticket disponibili -->
-  <mat-card class="custom-card">
-    <mat-card-header>
-      <mat-card-title  style="font-size: 12px;" class="card-subtitle mb-1 text-muted">Ticket disponibili:</mat-card-title>
-    </mat-card-header>
-    <mat-card-content class="d-flex align-items-center justify-content-between">
-      <div>
-        <p class="font-weight-bold" style="font-size: 28px;">5</p>
-      </div>
-      <mat-icon class="text-success" style="font-size: 28px;">ticket</mat-icon>
-    </mat-card-content>
-  </mat-card>
+  <!-- AREA PER UTENTE -->
+  <ng-container *ngIf="checkRuolo()==='Utente'">
+    <mat-card class="custom-card">
+      <mat-card-header>
+        <mat-card-title style="font-size: 12px;" class="card-subtitle mb-1 text-muted">Ticket disponibili:</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="d-flex align-items-center justify-content-between">
+        <div>
+          <p class="font-weight-bold" style="font-size: 28px;">5</p>
+        </div>
+        <mat-icon class="text-success" style="font-size: 28px;">ticket</mat-icon>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+  <!-- AREA PER TECNICO -->
+  <ng-container *ngIf="checkRuolo()==='Tecnico'">
+    <mat-card class="custom-card">
+      <mat-card-header>
+        <mat-card-title style="font-size: 12px;" class="card-subtitle mb-1 text-muted">Ticket disponibili:</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="d-flex align-items-center justify-content-between">
+        <div>
+          <p class="font-weight-bold" style="font-size: 28px;">5</p>
+        </div>
+        <mat-icon class="text-success" style="font-size: 28px;">ticket</mat-icon>
+      </mat-card-content>
+    </mat-card>
 
-  <!-- Card per Ticket presi in carico -->
-  <mat-card class="custom-card">
-    <mat-card-header>
-      <mat-card-title  style="font-size: 12px;" class="card-subtitle mb-1 text-muted">Ticket presi in carico:</mat-card-title>
-    </mat-card-header>
-    <mat-card-content class="d-flex align-items-center justify-content-between">
-      <div>
-        <p class="font-weight-bold" style="font-size: 28px;">4 / 5</p>
-      </div>
-      <mat-icon class="text-success" style="font-size: 28px;">suitcase</mat-icon>
-    </mat-card-content>
-  </mat-card>
+    <!-- Card per Ticket presi in carico -->
+    <mat-card class="custom-card">
+      <mat-card-header>
+        <mat-card-title style="font-size: 12px;" class="card-subtitle mb-1 text-muted">Ticket presi in carico:</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="d-flex align-items-center justify-content-between">
+        <div>
+          <p class="font-weight-bold" style="font-size: 28px;">4 / 5</p>
+        </div>
+        <mat-icon class="text-success" style="font-size: 28px;">suitcase</mat-icon>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
 </div>

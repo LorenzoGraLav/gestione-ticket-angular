@@ -1,0 +1,72 @@
+.custom-card {
+  border-radius: 10px; /* Bordi arrotondati */
+  transition: background-color 0.3s ease; /* Transizione per un cambio fluido del colore di sfondo */
+  overflow: hidden; /* Per evitare che il cerchio si sposti */
+  position: relative; /* Posizionamento relativo per controllare gli elementi interni */
+
+  /* Altri stili se necessari */
+}
+
+.circle-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px; /* Imposta la dimensione del cerchio */
+  height: 50px; /* Imposta la dimensione del cerchio */
+  border-radius: 50%; /* Rende il contenitore circolare */
+  overflow: hidden; /* Nasconde il contenuto che eccede i bordi */
+  background-color: #FFFFFF; /* Colore di sfondo bianco */
+  transition: background-color 0.3s ease; /* Transizione per un cambio fluido del colore di sfondo */
+}
+
+.circle-green {
+  background-color: #0D6efd; /* Verde */
+}
+
+.circle-yellow {
+  background-color: #22C55E; /* Giallo */
+}
+
+.circle-red {
+  background-color: #FDB52A; /* Rosso */
+}
+
+.custom-card:hover {
+  background-color: #DA0403; /* Rosso al passaggio del mouse sulla card */
+}
+
+.custom-card:hover .circle-icon {
+  background-color: white; /* Cerchio diventa bianco al passaggio del mouse */
+}
+
+.custom-card:hover .rounded-icon {
+  color: #DA0403; /* Icona bianca al passaggio del mouse */
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%; /* Occupa tutta l'altezza disponibile */
+}
+
+.rounded-icon {
+  color: black; /* Colore dell'icona predefinito */
+  transition: color 0.3s ease; /* Transizione per un cambio fluido del colore dell'icona */
+}
+
+.custom-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 100%; /* Inizia fuori dalla vista a destra */
+  background-color: rgba(218, 4, 3, 0.5); /* Colore di sfondo rosso con trasparenza */
+  transition: left 0.3s ease; /* Transizione per l'animazione di spostamento */
+  z-index: -1; /* Posizionamento dietro la carta */
+}
+
+.custom-card:hover::before {
+  left: 0; /* Spostamento verso sinistra per riempire la carta */
+}
