@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="https://www.solvingteam.it/web/wp-content/uploads/2022/02/cropped-st-32x32.png" sizes="32x32"/>
+  <link rel="icon" href="https://www.solvingteam.it/web/wp-content/uploads/2022/02/cropped-st-192x192.png"
+        sizes="192x192"/>
+  <link rel="apple-touch-icon" href="https://www.solvingteam.it/web/wp-content/uploads/2022/02/cropped-st-180x180.png"/>
+</head>
+<body class="mb-0">
+<header>
+  <mat-toolbar class="mat-toolbar-custom-area">
+
+
+    <a href="https://www.solvingteam.it/">
+      <img src="https://www.geeklogica.it/wp-content/uploads/2022/02/Group-17.png" alt="Solving Team" height="56">
+    </a>
+    <div fxLayout="row" fxLayoutAlign="center center" class="logout-container">
+      <h6 style="cursor: pointer; font-size: initial;" (click)="Logout()">Logout</h6>
+      <mat-icon class="Logout-icon" (click)="Logout()" style="cursor: pointer;">logout</mat-icon>
+    </div>
+
+
+  </mat-toolbar>
+  <div class="content-banner-bg">
+    <div class="banner-wrap pb-5">
+      <div class="container">
+        <div class="content text-center" >
+          <h1  style="display: flex; justify-content: center; font-size: 10vh">
+            <span class="text-primary title-shape title-shape-3" style="color: #da0403!important;">STTS</span>-Support
+            Ticketing System<span  class="ps-1 text-primary">.</span>
+          </h1>
+          <p class="banner-text lead"  style="display: flex; justify-content: center; font-size: 5vh">
+          <p *ngIf="checkRuolo()=='Utente'"  class="banner-title lead mb-2 mb-md-3">
+            Benvenuto nella tua area personale<span class="ps-1 text-primary">!</span>
+          </p>
+          <p *ngIf="checkRuolo()=='Tecnico'" class="banner-title lead mb-2 mb-md-3"  style="display: flex; justify-content: center; font-size: 5vh">
+            Bentornato nella tua area personale<span class="ps-1 text-primary">!</span>
+          </p>
+        </div>
+      </div>
+      <!-- .container -->
+    </div>
+  </div>
+</header>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+<!-- FOOTER DI BOOTSTRAP -->
+<footer class="mat-elevation-z6 footer-container">
+  <section>
+    <div class="container text-center text-md-start mt-5">
+      <mat-grid-list cols="4" gutterSize="16px">
+        <!-- Logo column -->
+        <mat-grid-tile colspan="1" rowspan="1" class="text-center">
+          <a class="d-flex align-items-center justify-content-center mb-3 link-body-emphasis text-decoration-none" href="https://www.solvingteam.it/">
+            <img src="https://www.geeklogica.it/wp-content/uploads/2022/02/Group-17.png" alt="Solving Team" height="92">
+          </a>
+        </mat-grid-tile>
+
+        <!-- Sede Legale columns -->
+        <mat-grid-tile colspan="1" rowspan="1">
+          <div class="text-center">
+            <p class="mat-subheading-2 mat-color text-dark fw-bold mb-4">
+              Sede Legale e Operativa
+            </p>
+            <p class="mat-body-1 text-muted">
+              Via Mosca, 52<br />
+              00142 ROMA - ITALIA<br />
+              Telefono: (+ 39) 06 51607174
+            </p>
+            <p class="mat-subheading-2 mat-color text-dark fw-bold mt-4 mb-4">
+              Sede Legale e Operativa Napoli
+            </p>
+            <p class="mat-body-1 text-muted">
+              Centro Direzionale Isola G7<br />
+              80143 NAPOLI - ITALIA
+            </p>
+          </div>
+        </mat-grid-tile>
+
+        <!-- Contatti column -->
+        <mat-grid-tile colspan="1" rowspan="1">
+          <div class="text-center">
+            <p class="mat-subheading-2 mat-color text-dark fw-bold mb-4">
+              Contatti
+            </p>
+            <p>
+              Email: <a href="mailto:jobs@solvingteam.it" class="text-reset" style="color: #eb132c !important;"><b>jobs&#64;solvingteam.it</b></a>
+            </p>
+          </div>
+        </mat-grid-tile>
+
+        <!-- Social column -->
+        <mat-grid-tile colspan="1" rowspan="1">
+          <div class="text-center">
+            <p class="mat-subheading-2 mat-color text-dark fw-bold mb-4">Social</p>
+            <div class="socials-icon-container d-flex justify-content-center gap-2 align-items-center">
+              <a href="https://www.facebook.com/SolvingTeam/" class="me-4 text-reset">
+                <mat-icon class="mat-icon-lg" style="color: #eb132c;">facebook</mat-icon>
+              </a>
+              <a href="https://www.linkedin.com/company/solving-team/" class="me-4 text-reset">
+                <mat-icon class="mat-icon-lg" style="color: #eb132c;">linkedin</mat-icon>
+              </a>
+            </div>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </section>
+  <div class="container">
+    <mat-divider></mat-divider>
+    <div class="text-center p-4">
+      <p class="mat-body-1 text-muted">
+        © 2024 Solvingteam Srl -  P.IVA 06925571009 |
+        <a href="https://lnx.solvingteam.it/web/privacy-policy/?customize_changeset_uuid=89766af3-ef7a-4b96-8806-dd8044cb8b5e&amp;customize_messenger_channel=preview-0" class="text-primary" style="text-decoration: none">Privacy Policy</a>
+      </p>
+    </div>
+  </div>
+</footer>

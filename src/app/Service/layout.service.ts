@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 import {VoceMenu} from "../Model/VoceMenu";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class LayoutService {
+  baseUrl = "https://localhost:44311/api/"
   menu: VoceMenu[] = [
     {
       nomeIcona: "dashboard",
@@ -31,5 +33,6 @@ export class LayoutService {
   setSidebarOpened(isOpened: boolean): void {
     this.isSidebarOpenedSource.next(isOpened);
   }
-  constructor() { }
+  constructor(private http:HttpClient) {
+  }
 }

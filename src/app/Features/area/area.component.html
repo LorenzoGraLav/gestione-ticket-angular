@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-xl-7">
+      <div class="block-head">
+        <div class="block-head-content text-center">
+          <div class="overline-title small mb-1 mb-md-2"
+               style="color: #2b5cfd; font-size: 130%; font-weight: bold; display: flex; justify-content: center">Le
+            nostre aree di lavoro
+          </div>
+          <h2 class="mt-0">STTS Aree Ticket</h2>
+          <p class="block-text lead" style="display:flex; justify-content: center; font-size: large">
+            STTS semplifica la comunicazione tra utenti e tecnici attraverso un'assistenza clienti divisa per aree.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div fxLayout.xs="column" fxLayout.md="row wrap" fxLayoutAlign="center start" fxLayoutGap="16px">
+      <div class="col-md-4" *ngFor="let area of areaList; let i = index" style="width: 30%; height: 32vh;">
+        <mat-card class="custom-card" fxFlex="calc(33.33% - 16px)"
+                  (mouseenter)="onMouseEnter(i)"
+                  (mouseleave)="onMouseLeave()"
+                  [class.hover-effect]="isHovered && hoveredIndex === i">
+          <div class="card-body text-center" style="margin-top: 10%">
+            <div class="circle-icon" [ngClass]="getCircleClass(i)">
+              <!-- Angular Material icon -->
+              <mat-icon class="rounded-icon">{{ area.icon }}</mat-icon>
+            </div>
+            <div style="margin-top: 8px;">
+              <mat-card-title [ngStyle]="{'color': isHovered && hoveredIndex === i ? 'white' : 'black'}">{{ 'Area ' + area.descrizione }}</mat-card-title>
+            </div>
+            <span class="stretched-link"></span>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+</div>

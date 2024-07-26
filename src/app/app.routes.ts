@@ -7,6 +7,8 @@ import {AuthService} from "./Service/auth/auth.service";
 import {FeaturesLayoutComponent} from "./Layout/features-layout/features-layout.component";
 import {RegisterComponent} from "./Features/register/register.component";
 import {authGuard} from "./Service/auth/authGuard";
+import {AreaComponent} from "./Features/area/area.component";
+import {AreaLayoutComponent} from "./Layout/area-layout/area-layout.component";
 
 export const routes: Routes = [
   {
@@ -14,6 +16,7 @@ export const routes: Routes = [
     redirectTo: 'login',
     pathMatch: 'full'
   },
+  // LAYOUT AUTH ------------------------------------
   {
     path: '',
     component: AuthLayoutComponent,
@@ -22,6 +25,7 @@ export const routes: Routes = [
       {path: 'register', component: RegisterComponent},
     ],
   },
+  //LAYOUT-BASE--------------------------------------
   {
     path: 'app',
     canActivate: [authGuard],
@@ -30,6 +34,17 @@ export const routes: Routes = [
     children: [
       {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
       {path: 'dashboard', component: DashboardComponent},
+    ],
+  },
+  //LAYOUT AREA------------------------------------------
+  {
+    path: 'app/area',
+    canActivate: [authGuard],
+    canActivateChild: [authGuard],
+    component: AreaLayoutComponent,
+    children: [
+      {path: '', redirectTo: 'area', pathMatch: 'full'},
+      {path: 'area', component: AreaComponent},
     ],
   },
   {path: 'dashboard', redirectTo: 'app/dashboard'},

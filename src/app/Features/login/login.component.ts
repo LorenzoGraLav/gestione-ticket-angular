@@ -45,7 +45,7 @@ export class LoginComponent {
         next: (response) => {
           console.log(response );
           if (response.token) {
-            this.router.navigate(['/dashboard']);
+            this.router.navigate([' app/area']);
           }
         },
         error: (error) => {
@@ -54,7 +54,7 @@ export class LoginComponent {
       });
     }
   }
-  naviaRegistrazione(){
+  navigaRegistrazione(){
     this.router.navigate(['/register']);
   }
 }

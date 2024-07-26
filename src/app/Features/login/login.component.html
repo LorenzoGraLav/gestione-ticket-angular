@@ -25,15 +25,13 @@
 
             <mat-form-field appearance="outline" style="width: 100%;">
               <mat-label>
-                <span style="display: flex; align-items: center;">
-                  <mat-icon
-                    matSuffix
-                    (click)="togglePasswordVisibility()"
-                    style="cursor: pointer; vertical-align: middle; margin-right: 6px;">
-                    {{ showPassword ? 'visibility_off' : 'visibility' }}
-                  </mat-icon>
-                  Password
-                </span>
+                <mat-icon
+                  matSuffix
+                  (click)="togglePasswordVisibility()"
+                  style="cursor: pointer; vertical-align: middle; margin-right: 6px;">
+                  {{ showPassword ? 'visibility_off' : 'visibility' }}
+                </mat-icon>
+                Password
               </mat-label>
               <input matInput [type]="showPassword ? 'text' : 'password'" formControlName="Password" id="Password">
               <mat-error *ngIf="utenteForm.get('Password')?.hasError('required')">Password obbligatoria!</mat-error>
@@ -44,6 +42,6 @@
       </mat-card>
     </div>
     <p style="text-align: center;">Non hai ancora un account? <a style="color: #DA0403 !important;cursor: pointer;"
-                                                                (click)="naviaRegistrazione()">Registrati!</a></p>
+                                                                 (click)="navigaRegistrazione()">Registrati!</a></p>
   </div>
 </div>

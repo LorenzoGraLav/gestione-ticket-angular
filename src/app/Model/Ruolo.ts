@@ -1,3 +1,3 @@
 export enum Ruolo{
-Utente,Tecnico, Amministratore
+  Utente, Tecnico, Amministratore
 }

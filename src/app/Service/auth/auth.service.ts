@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable, tap} from "rxjs";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +11,7 @@ export class AuthService {
   baseUrl = "https://localhost:44311/api/"
   private headers = {'Access-Control-Allow-Origin': '*/*'}
   private tokenVar !: string;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private route:Router) { }
   Utente = {
     Nome:"Alexandru",
     cognome:"Stefu",
@@ -30,7 +31,7 @@ export class AuthService {
   //   this.token = token;
   // }
   getToken(tokenName: string): any {
-    return localStorage.getItem(tokenName);
+    return localStorage.getItem(tokenName) ;
   }
   Register(Utente:any): Observable<any>{
     return this.http.post<any>(`${this.baseUrl}Auth/Register`, Utente);
@@ -38,4 +39,25 @@ export class AuthService {
   isUserLogged() {
     return localStorage.getItem('accessToken') != null;
   }
+  extractTokenPayload(tokenName: string) {
+    const token = this.getToken(tokenName);
+    if (token === null)
+      return null;
+    return JSON.parse(atob(token.split('.')[1]));
+  }
+  Logout(){
+     localStorage.removeItem('accessToken');
+    this.route.navigate(['/login']);
+  }
+  //controllo se il token e valido
+  isTokenExpired(): boolean {
+    const token = this.getToken('accessToken');
+    if (!token) {
+      return true;
+    }
+
+    const expiry = (JSON.parse(atob(token.split('.')[1]))).exp;
+    return (Math.floor((new Date).getTime() / 1000)) >= expiry;
+  }
 }
+

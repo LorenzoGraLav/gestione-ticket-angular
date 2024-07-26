@@ -9,5 +9,7 @@ export interface Utente{
   Ruolo?: Ruolo
   IsLoggedIn : boolean
   HasChangedPassword ?: boolean
+  RefreshToken?:string
+  RefreshTokenExpiryTime ?:Date
 }
 
