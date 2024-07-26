@@ -13,6 +13,12 @@ export class LayoutService {
       startUrl: "dashboard",
       title: "Dashboard"
     },
+    {
+      nomeIcona: "ticket in carico",
+      url: "ticketincarico",
+      startUrl: "ticketincarico",
+      title: "ticket in carico"
+    },
 
   ];
 

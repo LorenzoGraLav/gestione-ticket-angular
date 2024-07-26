@@ -2,4 +2,45 @@
   border-radius: 10px !important;
   width: 16%;
 }
+.custom-card {
+  width: 300px; /* Aumenta la larghezza della card */
+  padding: 20px; /* Aggiunge padding per maggiore spazio interno */
+  margin: 10px; /* Margine tra le card */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombra per effetto 3D */
+  border-radius: 8px; /* Angoli arrotondati */
+}
+
+.card-subtitle {
+  font-size: 18px; /* Aumenta la dimensione del font del titolo */
+  color: #6c757d; /* Colore del testo */
+}
+
+.ticket-number {
+  font-size: 36px; /* Aumenta la dimensione del font per i numeri */
+  font-weight: bold;
+  margin: 0;
+}
+
+.icon-custom {
+  font-size: 36px; /* Aumenta la dimensione delle icone */
+  color: #28a745; /* Colore dell'icona */
+}
+
+.mat-card-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.custom-card {
+  margin: 10px;
+}
+
+.wide-card {
+  width: 75%;
+}
+
+.light-green-bg {
+  background-color: #d5f5e3; /* Light green background */
+}
+
 
